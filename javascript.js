@@ -48,7 +48,8 @@ gridSheet.addEventListener("mouseenter", () => {       // colors grid when mouse
                 }
                 val = darken(val, -0.2)
                 e.target.style.backgroundColor = val
-            } else {
+            } else{
+                color = colorPicker.value
                 e.target.style.backgroundColor = color 
         }
         })
@@ -67,6 +68,7 @@ gridSheet.addEventListener("mouseenter", () => {       // colors grid when mouse
                 val = darken(val, -0.2)
                 e.target.style.backgroundColor = val
              } else if (mouseDown) {
+                color = colorPicker.value
                 e.target.style.backgroundColor = color
              }
         });
@@ -117,10 +119,6 @@ const updateColorPicker = function () { // update the color value when changing 
     clearDarken()
     colorButton.value = "ON"
     colorButton.style.backgroundColor = "#bfb8b3"
-    color = colorPicker.value
-    colorButton.value = "ON"
-    colorButton.style.backgroundColor = "#bfb8b3"
-    color = colorPicker.value
 }
 
 const eraseButton = document.getElementById("eraseButton") // Erase button to erase things ig
@@ -153,7 +151,11 @@ colorButton.addEventListener("click", () => {
         color = "not a color"
     }
 })
-
+const colorFunctionTest = function() {
+    colorButton.value = "ON"
+    colorButton.style.backgroundColor = "#bfb8b3"
+    color = colorPicker.value
+}
 
 const rainbowButton = document.getElementById("rainbowButton")
 rainbowButton.addEventListener("click", () => {
