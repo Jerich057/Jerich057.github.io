@@ -112,13 +112,15 @@ const darken = function (hex, lum) {
 
 
 const updateColorPicker = function () { // update the color value when changing color choice
-    color = colorPicker.value
     clearRainbow()
     clearErase()
     clearDarken()
     colorButton.value = "ON"
     colorButton.style.backgroundColor = "#bfb8b3"
-
+    color = colorPicker.value
+    colorButton.value = "ON"
+    colorButton.style.backgroundColor = "#bfb8b3"
+    color = colorPicker.value
 }
 
 const eraseButton = document.getElementById("eraseButton") // Erase button to erase things ig
